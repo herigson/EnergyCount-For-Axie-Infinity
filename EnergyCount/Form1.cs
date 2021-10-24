@@ -18,10 +18,17 @@ namespace EnergyCount
         public Form1()
         {
             InitializeComponent();
+            ConfigStyleForm();
+            ConfigStyleButtons();
             setDefaultValues();
-            energyDisplay.Text = Energy.ToString();
+            refreshEnergyDisplay();
         }
 
+        private void ConfigStyleForm()
+        {
+            this.BackColor = Color.RosyBrown;
+            this.TransparencyKey = Color.RosyBrown;
+        }
 
         private void energyDisplay_TextChanged(object sender, EventArgs e)
         {
@@ -31,17 +38,50 @@ namespace EnergyCount
         private void btnEndTurn_Click(object sender, EventArgs e)
         {
 
+
             AddEnergy(2);
-            Round++;
+            IncrementRound();
             UsedEnergy = 0;
             refreshEnergyDisplay();
 
 
         }
 
+        private void ConfigStyleButtons()
+        {
+            btnOneMoreEnergy.TabStop = false;
+            btnOneMoreEnergy.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //Transparent
+            btnOneMoreEnergy.FlatAppearance.BorderSize = 0;
+            btnOneMoreEnergy.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 255, 255, 255);
+            btnOneMoreEnergy.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 255, 255, 255);
+            btnOneMoreEnergy.FlatStyle = FlatStyle.Flat;
+
+            btnOneLessEnergy.TabStop = false;
+            btnOneLessEnergy.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //Transparent
+            btnOneLessEnergy.FlatAppearance.BorderSize = 0;
+            btnOneLessEnergy.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 255, 255, 255);
+            btnOneLessEnergy.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 255, 255, 255);
+            btnOneLessEnergy.FlatStyle = FlatStyle.Flat;
+
+            btnOneEnergyGained.TabStop = false;
+            btnOneEnergyGained.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //Transparent
+            btnOneEnergyGained.FlatAppearance.BorderSize = 0;
+            btnOneEnergyGained.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 255, 255, 255);
+            btnOneEnergyGained.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 255, 255, 255);
+            btnOneEnergyGained.FlatStyle = FlatStyle.Flat;
+
+
+            btnEndTurn.TabStop = false;
+            btnEndTurn.FlatAppearance.BorderColor = Color.FromArgb(0, 255, 255, 255); //Transparent
+            btnEndTurn.FlatAppearance.BorderSize = 0;
+            btnEndTurn.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 255, 255, 255);
+            btnEndTurn.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 255, 255, 255);
+            btnEndTurn.FlatStyle = FlatStyle.Flat;
+        }
         private void refreshEnergyDisplay()
         {
-            energyDisplay.Text = Energy.ToString();
+            lblEnergyDisplay.Text = Energy.ToString();
+            lblRoundCountDisplay.Text = Round.ToString();
         }
 
         private void btnOneMoreEnergy_Click(object sender, EventArgs e)
@@ -73,7 +113,15 @@ namespace EnergyCount
                 Energy += value;
             if (Energy > 10)
                 Energy = 10;
+        }
+
+        private void IncrementRound()
+        {
+            
             Round++;
+
+            if (Round > 99)
+                Round = 99;
         }
 
         private void UseEnergy()
@@ -96,6 +144,31 @@ namespace EnergyCount
             Energy = 3;
             Round = 1;
             UsedEnergy = 0;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void lblEnergy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblRoundCountDisplay_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEnergyDisplay_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
