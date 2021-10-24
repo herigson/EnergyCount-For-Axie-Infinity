@@ -1,4 +1,6 @@
 ﻿
+using System.Drawing;
+
 namespace EnergyCount
 {
     partial class Form1
@@ -61,15 +63,19 @@ namespace EnergyCount
             this.btnEndTurn.TabIndex = 1;
             this.btnEndTurn.Text = "End Turn";
             this.btnEndTurn.UseVisualStyleBackColor = false;
-            this.btnEndTurn.UseWaitCursor = true;
             this.btnEndTurn.Click += new System.EventHandler(this.btnEndTurn_Click);
+            this.btnEndTurn.MouseEnter += new System.EventHandler(this.btnEndTurn_MouseEnter);
+            this.btnEndTurn.MouseLeave += new System.EventHandler(this.btnEndTurn_MouseLeave);
             // 
             // btnOneMoreEnergy
             // 
             this.btnOneMoreEnergy.AllowDrop = true;
             this.btnOneMoreEnergy.BackColor = System.Drawing.Color.Transparent;
             this.btnOneMoreEnergy.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOneMoreEnergy.BackgroundImage")));
+            this.btnOneMoreEnergy.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btnOneMoreEnergy.FlatAppearance.BorderSize = 0;
+            this.btnOneMoreEnergy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnOneMoreEnergy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnOneMoreEnergy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOneMoreEnergy.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnOneMoreEnergy.ForeColor = System.Drawing.Color.Transparent;
@@ -80,8 +86,9 @@ namespace EnergyCount
             this.btnOneMoreEnergy.TabIndex = 2;
             this.btnOneMoreEnergy.Text = "+1 Energy Used";
             this.btnOneMoreEnergy.UseVisualStyleBackColor = false;
-            this.btnOneMoreEnergy.UseWaitCursor = true;
             this.btnOneMoreEnergy.Click += new System.EventHandler(this.btnOneMoreEnergy_Click);
+            this.btnOneMoreEnergy.MouseEnter += new System.EventHandler(this.btnOneMoreEnergy_MouseEnter);
+            this.btnOneMoreEnergy.MouseLeave += new System.EventHandler(this.btnOneMoreEnergy_MouseLeave);
             // 
             // btnOneLessEnergy
             // 
@@ -97,8 +104,9 @@ namespace EnergyCount
             this.btnOneLessEnergy.TabIndex = 3;
             this.btnOneLessEnergy.Text = "+1 Energy Destroyed";
             this.btnOneLessEnergy.UseVisualStyleBackColor = false;
-            this.btnOneLessEnergy.UseWaitCursor = true;
             this.btnOneLessEnergy.Click += new System.EventHandler(this.btnOneLessEnergy_Click);
+            this.btnOneLessEnergy.MouseEnter += new System.EventHandler(this.btnOneLessEnergy_MouseEnter);
+            this.btnOneLessEnergy.MouseLeave += new System.EventHandler(this.btnOneLessEnergy_MouseLeave);
             // 
             // btnOneEnergyGained
             // 
@@ -116,8 +124,9 @@ namespace EnergyCount
             this.btnOneEnergyGained.TabIndex = 4;
             this.btnOneEnergyGained.Text = "+1 Energy Gained";
             this.btnOneEnergyGained.UseVisualStyleBackColor = false;
-            this.btnOneEnergyGained.UseWaitCursor = true;
             this.btnOneEnergyGained.Click += new System.EventHandler(this.btnOneEnergyGained_Click);
+            this.btnOneEnergyGained.MouseEnter += new System.EventHandler(this.btnOneEnergyGained_MouseEnter);
+            this.btnOneEnergyGained.MouseLeave += new System.EventHandler(this.btnOneEnergyGained_MouseLeave);
             // 
             // btnReset
             // 
@@ -134,8 +143,9 @@ namespace EnergyCount
             this.btnReset.TabIndex = 5;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = false;
-            this.btnReset.UseWaitCursor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnReset.MouseEnter += new System.EventHandler(this.btnReset_MouseEnter);
+            this.btnReset.MouseLeave += new System.EventHandler(this.btnReset_MouseLeave);
             // 
             // btnClose
             // 
@@ -151,7 +161,6 @@ namespace EnergyCount
             this.btnClose.Size = new System.Drawing.Size(43, 45);
             this.btnClose.TabIndex = 6;
             this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.UseWaitCursor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblEnergy
@@ -166,13 +175,12 @@ namespace EnergyCount
             this.lblEnergy.Size = new System.Drawing.Size(94, 35);
             this.lblEnergy.TabIndex = 7;
             this.lblEnergy.Text = "Energy";
-            this.lblEnergy.UseWaitCursor = true;
-            this.lblEnergy.Click += new System.EventHandler(this.lblEnergy_Click);
             // 
             // lblRound
             // 
             this.lblRound.AutoSize = true;
             this.lblRound.BackColor = System.Drawing.Color.Transparent;
+            this.lblRound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblRound.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblRound.ForeColor = System.Drawing.Color.Black;
             this.lblRound.Location = new System.Drawing.Point(75, 64);
@@ -180,7 +188,6 @@ namespace EnergyCount
             this.lblRound.Size = new System.Drawing.Size(82, 35);
             this.lblRound.TabIndex = 8;
             this.lblRound.Text = "Round";
-            this.lblRound.UseWaitCursor = true;
             // 
             // roundPictureBox
             // 
@@ -192,7 +199,6 @@ namespace EnergyCount
             this.roundPictureBox.Size = new System.Drawing.Size(27, 30);
             this.roundPictureBox.TabIndex = 9;
             this.roundPictureBox.TabStop = false;
-            this.roundPictureBox.UseWaitCursor = true;
             // 
             // pictureBox1
             // 
@@ -204,7 +210,6 @@ namespace EnergyCount
             this.pictureBox1.Size = new System.Drawing.Size(24, 31);
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.UseWaitCursor = true;
             // 
             // lblRoundCountDisplay
             // 
@@ -217,9 +222,8 @@ namespace EnergyCount
             this.lblRoundCountDisplay.Name = "lblRoundCountDisplay";
             this.lblRoundCountDisplay.Size = new System.Drawing.Size(51, 51);
             this.lblRoundCountDisplay.TabIndex = 11;
-            this.lblRoundCountDisplay.Text = "1";
             this.lblRoundCountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblRoundCountDisplay.UseWaitCursor = true;
+            this.lblRoundCountDisplay.Click += new System.EventHandler(this.lblRoundCountDisplay_Click);
             // 
             // lblEnergyDisplay
             // 
@@ -233,8 +237,6 @@ namespace EnergyCount
             this.lblEnergyDisplay.Size = new System.Drawing.Size(51, 51);
             this.lblEnergyDisplay.TabIndex = 12;
             this.lblEnergyDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblEnergyDisplay.UseWaitCursor = true;
-            this.lblEnergyDisplay.Click += new System.EventHandler(this.lblEnergyDisplay_Click);
             // 
             // Form1
             // 
@@ -255,6 +257,7 @@ namespace EnergyCount
             this.Controls.Add(this.btnOneLessEnergy);
             this.Controls.Add(this.btnOneMoreEnergy);
             this.Controls.Add(this.btnEndTurn);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.Transparent;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -263,7 +266,6 @@ namespace EnergyCount
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Form1";
-            this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.roundPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
